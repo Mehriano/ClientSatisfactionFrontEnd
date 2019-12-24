@@ -1,0 +1,48 @@
+<div style="position: relative; top:0;left:0;right:0;bottom:0;">
+    <mat-toolbar color="primary" fxLayoutAlign="center center">
+        <h2><span class="span">Store Skyleer</span></h2>
+    </mat-toolbar>
+
+    <mat-toolbar color="primary" fxLayoutAlign="center center">
+        <h2> <span class="span"></span></h2>
+    </mat-toolbar>
+
+    <mat-toolbar fxLayout="column" fxLayoutAlign="space-around start" style="background: darkblue;height: 3vh;">
+        <h6>Web-Based Space Survey Application </h6>
+    </mat-toolbar>
+
+    <div fxShow="true" fxHide.lt-md="true">
+        <mat-toolbar class="basic" color="basic" fxLayout="row" fxLayoutAlign="space-evenly start">
+            <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+            <mat-nav-list>
+                <button mat-raised-button routerLink='' routerLinkActive="active">
+                    <mat-icon>home</mat-icon><br />HOME
+                </button>
+
+                <button mat-raised-button routerLink='survey' routerLinkActive='active'>
+                    <mat-icon>explore</mat-icon><br />SPACE SURVEY
+                </button>
+
+                <button mat-raised-button routerLink='dash' routerLinkActive='active'>
+                    <mat-icon>account_box</mat-icon><br />SPACE ADMIN
+                </button>
+
+                <button mat-raised-button>
+                    <mat-icon>help_outline</mat-icon><br />HELP
+                </button>
+
+            </mat-nav-list>
+        </mat-toolbar>
+    </div>
+
+</div>
+<div class="wrapper">
+    <router-outlet></router-outlet>
+</div>
+<div></div>
+<footer style="width: 100%;">
+    <div class="footer" style="width: 100%;">
+        <p>Copyright 2019 </p>
+    </div>
+    <div class="outerfooter" style="width: 100%;"></div>
+</footer>

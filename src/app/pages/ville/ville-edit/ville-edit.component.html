@@ -1,0 +1,20 @@
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <mat-card class="example-card">
+    <form [formGroup]="villeForm" (ngSubmit)="onFormSubmit(villeForm.value)">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="ville Name" formControlName="nom" [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!villeForm.get('nom').valid && villeForm.get('nom').touched">Please enter ville Name</span>
+        </mat-error>
+      </mat-form-field>
+      <div class="button-row">
+        <button type="submit" [disabled]="!villeForm.valid" mat-flat-button color="primary">
+          <mat-icon>save</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,49 @@
+<div *ngIf="questions.length > 0" class="example-container mat-elevation-z8">
+  <div class="example-loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+
+  <mat-card class="example-card">
+    <h1> {{x}}</h1>
+    <form [formGroup]="questionnaireRepForme" (ngSubmit)="onFormSubmit(questionnaireRepForme.value)">
+      <div formArrayName="reponses" *ngFor="
+          let reponse of questionnaireRepForme.get('reponses').controls;
+          let i = index
+        ">
+        <div [formGroupName]="i">
+          {{ questions[i].titreQuestion }}
+          <div>
+            <div class="example-full-width" [ngSwitch]="questions[i].type">
+              <input matInput placeholder="Type Your Answer" formControlName="contenuReponse" *ngSwitchCase="'Text'" />
+              <input matInput formControlName="contenuReponse" placeholder="type here" *ngSwitchCase="'TextArea'" />
+
+              <section formArrayName="propositions" *ngSwitchCase="'CheckBox'" class="py-3">
+                <mat-checkbox matInput *ngFor="
+                  let control of questionnaireRepForme
+                    .get('reponses')
+                    .at(i)
+                    .get('propositions').controls;
+                  let j = index
+                " [value]="aaaa" class="mx-2" [formControl]="control">{{
+                  questions[i].propositions[j].titreProposition
+                }}</mat-checkbox>
+              </section>
+              <mat-radio-group formControlName="propositionId" *ngSwitchCase="'Radio'">
+                <mat-radio-button *ngFor="let prop of questions[i].propositions" [value]="prop._id" class="mx-2">
+                  {{ prop.titreProposition }}</mat-radio-button>
+              </mat-radio-group>
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="!questionnaireRepForme.valid" mat-flat-button color="primary">
+        <mat-icon>submit answer</mat-icon>
+      </button>
+    </form>
+  </mat-card>
+</div>

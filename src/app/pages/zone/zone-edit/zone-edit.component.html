@@ -1,0 +1,34 @@
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" (click)="zoneDetails()">
+      <mat-icon>info</mat-icon>
+    </a>
+  </div>
+  <mat-card class="example-card">
+    <form [formGroup]="zoneForm" (ngSubmit)="onFormSubmit(zoneForm.value)">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="zone Name" formControlName="nom" [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!zoneForm.get('nom').valid && zoneForm.get('nom').touched">Please enter zone Name</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="mx-2">
+        <mat-select formControlName="villeId">
+          <mat-option *ngFor="let ville of villes" [value]="ville._id">
+            {{ville.nom}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="button-row">
+        <button type="submit" [disabled]="!zoneForm.valid" mat-flat-button color="primary">
+          <mat-icon>save</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

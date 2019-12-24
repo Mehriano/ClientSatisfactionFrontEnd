@@ -1,0 +1,52 @@
+<div fxLayout="row wrap" *ngIf="users">
+
+    <div *ngFor="let user of users; " fxFlex="100" fxFlex.xl="25" fxFlex.lg="25" fxFlex.md="50" fxFlex.sm="50"
+        class="p-2">
+        <mat-card fxLayout="row" fxLayoutAlign="start center" class="p-1 gradient-indigo team-member">
+            <img src="assets/img/avatars/avatar-1.png" alt="image" class="mat-elevation-z3">
+            <div fxLayout="column" fxLayoutAlign="center center" class="w-100">
+                <h3>{{user.nom}}</h3>
+                <p class="mt-1">{{user.role}}</p>
+                <a routerLink="." mat-icon-button>
+                    <mat-icon>exit_to_app</mat-icon>
+                </a>
+            </div>
+        </mat-card>
+    </div>
+    <!-- <div fxFlex="100" fxFlex.xl="25" fxFlex.lg="25" fxFlex.md="50" fxFlex.sm="50" class="p-2">
+        <mat-card fxLayout="row" fxLayoutAlign="start center" class="p-1 gradient-green team-member">
+            <img src="assets/img/profile/tereza.jpg" alt="image" class="mat-elevation-z3">        
+            <div fxLayout="column" fxLayoutAlign="center center" class="w-100">
+                <h3>sdmgkhm </h3>
+                <p class="mt-1">None</p>
+                <a routerLink="." mat-icon-button>
+                    <mat-icon>exit_to_app</mat-icon>
+                </a>
+            </div>
+        </mat-card>
+    </div>
+    <div fxFlex="100" fxFlex.xl="25" fxFlex.lg="25" fxFlex.md="50" fxFlex.sm="50" class="p-2">
+        <mat-card fxLayout="row" fxLayoutAlign="start center" class="p-1 gradient-amber team-member">
+            <img src="assets/img/profile/adam.jpg" alt="image" class="mat-elevation-z3">        
+            <div fxLayout="column" fxLayoutAlign="center center" class="w-100">
+                <h3>souha</h3>
+                <p class="mt-1">None</p>
+                <a routerLink="." mat-icon-button>
+                    <mat-icon>exit_to_app</mat-icon>
+                </a>
+            </div>
+        </mat-card>
+    </div>
+    <div fxFlex="100" fxFlex.xl="25" fxFlex.lg="25" fxFlex.md="50" fxFlex.sm="50" class="p-2">
+        <mat-card fxLayout="row" fxLayoutAlign="start center" class="p-1 gradient-red team-member">
+            <img src="assets/img/profile/ashley.jpg" alt="image" class="mat-elevation-z3">        
+            <div fxLayout="column" fxLayoutAlign="center center" class="w-100">
+                <h3>radhi</h3>
+                <p class="mt-1">None</p>
+                <a routerLink="." mat-icon-button>
+                    <mat-icon>exit_to_app</mat-icon>
+                </a>
+            </div>
+        </mat-card>
+    </div>-->
+</div>

@@ -1,0 +1,81 @@
+html {
+    height: 100%;
+}
+
+.mat-toolbar {
+    height: 5vh;
+}
+
+.basic {
+    height: 12vh;
+}
+
+.span {
+    font-family: Georgia, serif;
+    font-style: Italic;
+    font-size: 20px;
+}
+
+h6 {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+}
+
+.mat-raised-button {
+    border-radius: 20px;
+    max-height: 10vh;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    background: #6A5ACD;
+}
+
+.mat-icon {
+    transform: scale(1.5);
+}
+
+.mat-sidenav {
+    background: darkblue;
+}
+
+.tabs {
+    padding-left: 5px;
+    color: white;
+    font-size: 12px;
+    font-family: Verdana, sans-serif;
+}
+
+footer {
+    position: relative;
+    //bottom: 31px;
+    height: 50px;
+    z-index: -999;
+}
+
+.outerfooter {
+    background-color: darkblue;
+    height: 20px;
+    position: relative;
+    bottom: 5px;
+}
+
+.footer {
+    /* position: relative;
+    bottom: -20px;*/
+    height: 20px;
+    padding: 15px;
+    background-color: #303f9f;
+    color: white;
+    text-align: center;
+}
+
+.wrapper {
+    overflow: auto;
+    min-height: 80%;
+    max-height: 90%;
+    margin-bottom: -100px;
+    padding-bottom: 50px;
+    background-color: whitesmoke;
+}

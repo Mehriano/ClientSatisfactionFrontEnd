@@ -1,0 +1,72 @@
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" (click)="boutiqueDetails()">
+      <mat-icon>info</mat-icon>
+    </a>
+  </div>
+  <mat-card class="example-card">
+    <form [formGroup]="boutiqueForm" (ngSubmit)="onFormSubmit(boutiqueForm.value)">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="boutique Name" formControlName="nom" [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!boutiqueForm.get('nom').valid && boutiqueForm.get('nom').touched">Please enter boutique
+            Name</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="mx-2">
+        <mat-select placeholder="Zone" formControlName="zoneId">
+          <mat-option *ngFor="let zone of zones" [value]="zone._id">
+            {{zone.nom}}
+          </mat-option>
+        </mat-select>
+        <mat-error>
+          <span *ngIf="!boutiqueForm.get('zoneId').valid && boutiqueForm.get('zoneId').touched">Please select a
+            zone</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="mx-2">
+        <mat-select placeholder="Responsbale Personnel" formControlName="responsableId">
+          <mat-option *ngFor="let responsable of responsbales" [value]="responsable._id">
+            {{responsable.nom}}
+          </mat-option>
+        </mat-select>
+
+      </mat-form-field>
+      <mat-form-field class="mx-2">
+        <mat-select placeholder="Questionnaire" formControlName="questionnaireId">
+          <mat-option *ngFor="let questionnaire of questionnaires" [value]="questionnaire._id">
+            {{questionnaire.titreQuestioannaire}}
+          </mat-option>
+        </mat-select>
+
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="uuid" formControlName="uuid" [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!boutiqueForm.get('uuid').valid && boutiqueForm.get('uuid').touched">Please enter boutique
+            UUid</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Lieu" formControlName="lieu" [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!boutiqueForm.get('lieu').valid && boutiqueForm.get('lieu').touched">Please enter boutique
+            place</span>
+        </mat-error>
+      </mat-form-field>
+
+      <div class="button-row">
+        <button type="submit" [disabled]="!boutiqueForm.valid" mat-flat-button color="primary">
+          <mat-icon>save</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>
